@@ -171,7 +171,7 @@ function updateTrackListHighlight() {
   });
 }
 
-//When a track is clicked in the list
+// When a track is clicked in the list
 function populateTrackList() {
   const trackList = document.getElementById("track-list");
   trackList.innerHTML = '';
