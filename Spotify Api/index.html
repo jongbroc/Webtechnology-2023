@@ -11,10 +11,23 @@
 <body>
   <div id="main">
     <div class="playlist">
-      <h1>Spotify playlist</h1>
+      <h1>My Playlist</h1>
 
       <div data-js="tracks">
-        <!-- here we are going to display the fetched tracks -->
+        <div id="track-info">
+          <img id="album-image" src="" alt="Album Image" />
+          <p id="track-name"></p>
+          <p id="track-artists"></p>
+        </div>
+        <div id="audio-player-controls">
+          <button id="prev-track">&#9664;&#9664;</button>
+          <button id="play-pause">&#9654;</button>
+          <button id="next-track">&#9654;&#9654;</button>
+          <audio id="audio-player"></audio>
+          <input type="range" id="seek-bar" value="0" max="100">
+          <input type="range" id="volume-control" value="100" max="100">
+        </div>
+        <ul id="track-list"></ul>
       </div>
     </div>
   </div>
