@@ -193,9 +193,15 @@ function populateTrackList() {
 document.addEventListener('DOMContentLoaded', (event) => {
   const toggleButton = document.getElementById('toggle-track-list');
   const trackListContainer = document.getElementById('track-list-container');
+  const toggleIcon = document.getElementById('toggle-icon');
 
   toggleButton.addEventListener('click', () => {
     trackListContainer.classList.toggle('hidden');
+    if (trackListContainer.classList.contains('hidden')) {
+      toggleIcon.src = 'hide.png';
+    } else {
+      toggleIcon.src = 'show.png';
+    }
   });
 });
 
