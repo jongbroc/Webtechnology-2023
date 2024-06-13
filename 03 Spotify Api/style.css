@@ -1,5 +1,8 @@
+*{
+  box-sizing: border-box;
+}
 body {
-  font-family: Arial, sans-serif;
+  font-family:'Franklin Gothic Medium';
   background-color: #121212;
   color: #ffffff;
   margin: 0;
@@ -22,8 +25,8 @@ body {
 
 #content {
   display: flex;
-  justify-content: space-between; /* Ensure space between track info and track list */
-  align-items: flex-start; /* Align items to the top */
+  justify-content: space-between; 
+  align-items: flex-start; 
 }
 
 #track-info-and-controls {
@@ -34,7 +37,10 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-right: 20px; /* Space between track info and track list */
+  margin-right: 20px; 
+  /* max-height: 400px; */
+  min-height: 400px; 
+  /* width: 500px;  */
 }
 
 #track-info {
@@ -70,9 +76,11 @@ body {
 }
 
 #play-pause {
+  display: inline-block;
   font-size: 32px;
-  height: 48px; /* Set a consistent height for play/pause button */
+  height: 48px; 
   width: 48px;
+  min-width: 48px;
   margin: 5px;
 }
 
@@ -82,8 +90,20 @@ body {
 }
 
 #volume-control {
-  width: 100%;
+  width: 50%;
   margin-top: 10px;
+}
+
+#toggle-track-list {
+  background: black;
+  border: 5px solid #353535;
+  border-radius: 8px;
+  color: white;
+  /* padding: 20px; */
+  text-align: center;
+  /* position: fixed; */
+  
+  
 }
 
 #track-name
@@ -99,10 +119,10 @@ body {
 
 #track-list-container {
   overflow-y: auto;
-  scrollbar-width: none; /* For Firefox */
+  scrollbar-width: none; 
   /* -ms-overflow-style: none;  For Internet Explorer and Edge */
-  max-height: 400px; /* Adjust height as needed */
-  width: 500px; /* Adjust width as needed */
+  max-height: 400px; 
+  width: 500px; 
   border: 5px solid #353535;
   border-radius: 8px;
 }
@@ -128,6 +148,13 @@ body {
 }
 
 #track-list li.playing {
-  background-color: #693607; /* Change color of the selected song */
+  background-color: #693607; 
   color:  #ffffff;
 }
+
+/* Add the following CSS */
+.hidden {
+  visibility: hidden;
+}
+
+

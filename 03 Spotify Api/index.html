@@ -11,9 +11,10 @@
 <body>
   <div id="main">
     <div class="playlist">
-      <h1>My Playlist</h1>
+      <h1>MY PLAYLIST</h1>
       <div id="content">
         <div id="track-info-and-controls">
+          <div><button id="toggle-track-list">Toggle Track List</button></div>
           <div id="track-info">
             <img id="album-image" src="" alt="Album Image" />
             <p id="track-name"></p>
@@ -24,10 +25,13 @@
             <button id="play-pause">&#9654;</button>
             <button id="next-track">&#9654;&#9654;</button>
             <audio id="audio-player"></audio>
+          </div>
+          <div>
             <input type="range" id="seek-bar" value="0" max="100">
             <input type="range" id="volume-control" value="100" max="100">
           </div>
         </div>
+        
         <div id="track-list-container">
           <ul id="track-list"></ul>
         </div>

@@ -171,7 +171,7 @@ function updateTrackListHighlight() {
   });
 }
 
-// When a track is clicked in the list
+//When a track is clicked in the list
 function populateTrackList() {
   const trackList = document.getElementById("track-list");
   trackList.innerHTML = '';
@@ -189,4 +189,13 @@ function populateTrackList() {
 
   updateTrackListHighlight();
 }
+
+document.addEventListener('DOMContentLoaded', (event) => {
+  const toggleButton = document.getElementById('toggle-track-list');
+  const trackListContainer = document.getElementById('track-list-container');
+
+  toggleButton.addEventListener('click', () => {
+    trackListContainer.classList.toggle('hidden');
+  });
+});
 
