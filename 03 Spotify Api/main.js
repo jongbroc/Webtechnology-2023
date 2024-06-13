@@ -120,15 +120,18 @@ document.getElementById("next-track").addEventListener("click", () => {
 document.getElementById("play-pause").addEventListener("click", () => {
   const audioPlayer = document.getElementById("audio-player");
   const playPauseButton = document.getElementById("play-pause");
+  const playPauseIcon = document.getElementById("play-pause-icon");
 
   if (audioPlayer.paused) {
     audioPlayer.play();
     playPauseButton.textContent = "❚❚";
+    // playPauseIcon.src = 'pause.png';
   } else {
     audioPlayer.pause();
     playPauseButton.textContent = "►";
   }
 });
+
 
 document.getElementById("audio-player").addEventListener("timeupdate", () => {
   const audioPlayer = document.getElementById("audio-player");
@@ -194,13 +197,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const toggleButton = document.getElementById('toggle-track-list');
   const trackListContainer = document.getElementById('track-list-container');
   const toggleIcon = document.getElementById('toggle-icon');
+  const albumImageContainer = document.getElementById('album-image-container');
+  const albumImageHidden = document.getElementById('album-image-hidden');
+
 
   toggleButton.addEventListener('click', () => {
     trackListContainer.classList.toggle('hidden');
     if (trackListContainer.classList.contains('hidden')) {
-      toggleIcon.src = 'hide.png';
-    } else {
       toggleIcon.src = 'show.png';
+      
+    } else {
+      toggleIcon.src = 'hide.png';
     }
   });
 });

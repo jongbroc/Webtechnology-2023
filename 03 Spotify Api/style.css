@@ -2,11 +2,12 @@
   box-sizing: border-box;
 }
 body {
-  font-family:'Franklin Gothic Medium';
-  background: url('Interface.png') no-repeat center center fixed; 
-  background-size: cover;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  background-color: black;
+  /* background: url('Interface.png') no-repeat center center fixed; 
+  background-size: fill; */
   /* background-color: #121212; */
-  color: #ff0000;
+  color: #FFCC00;
   margin: 0;
   display: flex;
   justify-content: center;
@@ -33,7 +34,7 @@ body {
 }
 
 #track-info-and-controls {
-  
+  background: #353535;
   position: relative;
   border: 5px solid #353535;
   border-radius: 8px;
@@ -46,8 +47,10 @@ body {
   /* max-height: 400px; */
   min-height: 400px; 
   /* width: 500px;  */
-  /* background: url('interface.png') no-repeat center center;
-  background-size: cover; Ensure the background image covers the entire container */
+  /* background: url('Background0.png') no-repeat center center;  */
+  background-size: 290px 420px;
+  background-position: center;
+  /* background-position-y: 5px; */
 }
 
 
@@ -72,7 +75,7 @@ body {
 #audio-player-controls button {
   background: none;
   border: none;
-  color: #ff0000;
+  color: white;
   font-size: 24px;
   margin: 0 10px;
   cursor: pointer;
@@ -85,12 +88,28 @@ body {
 
 #play-pause {
   display: inline-block;
+  border: black;
   font-size: 32px;
   height: 48px; 
   width: 48px;
   min-width: 48px;
   margin: 5px;
 }
+
+#audio-player-controls button img {
+  width: 100%;
+  height: auto;
+}
+
+#audio-player-controls button {
+  width: 48px;  
+  height: 48px; 
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
 
 #seek-bar {
   width: 100%;
@@ -104,14 +123,14 @@ body {
 
 #toggle-track-list {
   position: absolute;
-  top: 10px; /* Adjust as needed */
-  right: 10px; /* Adjust as needed */
-  background: white;
-  border: 5px solid #353535;
+  top: 2px; /* Adjust as needed */
+  right: 2px; /* Adjust as needed */
+  background: none;
+  border: 2px solid #353535;
   border-radius: 8px;
   align-items: center;
   /* color: white; */
-  /* padding: 20px; */
+  padding: 5px;
   text-align: center;
   /* position: fixed; */
   
@@ -133,6 +152,7 @@ body {
   overflow-y: auto;
   scrollbar-width: none; 
   /* -ms-overflow-style: none;  For Internet Explorer and Edge */
+  min-height: 400px;
   max-height: 400px; 
   width: 500px; 
   border: 5px solid #353535;
@@ -141,6 +161,7 @@ body {
 
 
 #track-list {
+  background: #353535;
   list-style-type: none; 
   padding: 0;
   margin: 0;
@@ -152,15 +173,15 @@ body {
   /* border-bottom: 1px solid #ff4800; */
   padding: 10px;
   transition: background-color 0.3s;
-  color: gray;
+  color: rgb(76, 76, 76);
 }
 
 #track-list li:hover {
-  background-color: #127735;
+  background-color: #FFCC00;
 }
 
 #track-list li.playing {
-  background-color: #693607; 
+  background-color: #043168; 
   color:  #ffffff;
 }
 
