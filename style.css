@@ -1,12 +1,12 @@
-*{
+/* Universal Styles */
+* {
   box-sizing: border-box;
 }
+
 body {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  background-color: black;
-  /* background: url('Interface.png') no-repeat center center fixed; 
-  background-size: fill; */
-  /* background-color: #121212; */
+  background: url('diamond.jpg') no-repeat center center fixed; 
+  background-size: cover;
   color: #FFCC00;
   margin: 0;
   display: flex;
@@ -14,27 +14,29 @@ body {
   align-items: center;
 }
 
+/* Main Container */
 #main {
   display: flex;
-  /* background: rgba(255, 255, 255, 0.8); */
   justify-content: center;
   align-items: center;
 }
 
 .playlist {
-  /* background-color: #000000; */
   padding: 20px;
   border-radius: 8px;
 }
 
+/* Content Section */
 #content {
   display: flex;
   justify-content: space-between; 
   align-items: flex-start; 
 }
 
+/* Track Info and Controls */
 #track-info-and-controls {
-  background: #353535;
+  background: #353535 url('Background_glass.jpg') no-repeat center center;
+  background-size: cover;
   position: relative;
   border: 5px solid #353535;
   border-radius: 8px;
@@ -43,16 +45,9 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-right: 20px; 
-  /* max-height: 400px; */
+  margin-right: 20px;
   min-height: 400px; 
-  /* width: 500px;  */
-  /* background: url('Background0.png') no-repeat center center;  */
-  background-size: 290px 420px;
-  background-position: center;
-  /* background-position-y: 5px; */
 }
-
 
 #track-info {
   text-align: center;
@@ -79,6 +74,9 @@ body {
   font-size: 24px;
   margin: 0 10px;
   cursor: pointer;
+  width: 48px;
+  height: 48px;
+  padding: 0;
 }
 
 #audio-player-controls button:disabled {
@@ -87,8 +85,6 @@ body {
 }
 
 #play-pause {
-  display: inline-block;
-  border: black;
   font-size: 32px;
   height: 48px; 
   width: 48px;
@@ -101,57 +97,46 @@ body {
   height: auto;
 }
 
-#audio-player-controls button {
-  width: 48px;  
-  height: 48px; 
-  padding: 0;
-  border: none;
-  background: none;
-  cursor: pointer;
-}
-
-
-#seek-bar {
+#seek-bar,
+#volume-control {
   width: 100%;
   margin-top: 10px;
 }
 
 #volume-control {
   width: 50%;
-  margin-top: 10px;
 }
 
 #toggle-track-list {
   position: absolute;
-  top: 2px; /* Adjust as needed */
-  right: 2px; /* Adjust as needed */
+  top: 2px;
+  right: 2px;
   background: none;
-  border: 2px solid #353535;
-  border-radius: 8px;
-  align-items: center;
-  /* color: white; */
+  border: none;
   padding: 5px;
   text-align: center;
-  /* position: fixed; */
-  
-  
 }
 
-#track-name
-{
-  margin: 5px 0;
+#toggle-track-list img {
+  width: 20px;
+  height: 20px;
 }
+
+#track-name,
 #track-artists {
   margin: 5px 0;
-  font-size: small;
-  font-weight: lighter;
-  color: gray;
 }
 
+#track-artists {
+  font-size: small;
+  font-weight: lighter;
+  color: #fff;
+}
+
+/* Track List Container */
 #track-list-container {
   overflow-y: auto;
-  scrollbar-width: none; 
-  /* -ms-overflow-style: none;  For Internet Explorer and Edge */
+  scrollbar-width: none;
   min-height: 400px;
   max-height: 400px; 
   width: 500px; 
@@ -159,9 +144,9 @@ body {
   border-radius: 8px;
 }
 
-
 #track-list {
-  background: #353535;
+  background: #353535 url('Background_glass.jpg') no-repeat center center; 
+  background-size: cover;
   list-style-type: none; 
   padding: 0;
   margin: 0;
@@ -170,10 +155,9 @@ body {
 
 #track-list li {
   cursor: pointer;
-  /* border-bottom: 1px solid #ff4800; */
   padding: 10px;
   transition: background-color 0.3s;
-  color: rgb(76, 76, 76);
+  color: #000;
 }
 
 #track-list li:hover {
@@ -182,17 +166,47 @@ body {
 
 #track-list li.playing {
   background-color: #043168; 
-  color:  #ffffff;
+  color: #fff;
 }
 
-
+/* Hidden Class */
 .hidden {
   visibility: hidden;
 }
 
-#toggle-track-list img {
-  width: 20px;
-  height: 20px;
+/* Range Input Styles */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  background: #000;
+  outline: none;
+  opacity: 1;
+  transition: opacity .2s;
 }
 
+input[type="range"]:hover {
+  opacity: 1;
+}
 
+input[type="range"]::-webkit-slider-thumb,
+input[type="range"]::-moz-range-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #FFCC00;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 1);
+}
+
+input[type="range"]::-webkit-slider-runnable-track,
+input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
+  background: #555;
+  border-radius: 4px;
+}
