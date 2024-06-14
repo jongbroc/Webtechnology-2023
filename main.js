@@ -49,7 +49,7 @@ function displayTrack(index) {
   const playPauseButton = document.getElementById("play-pause");
   const playPauseIcon = document.getElementById("play-pause-icon");
 
-  playPauseIcon.src = track.preview_url ? "assets/play.png" : "disabled.png";
+  playPauseIcon.src = track.preview_url ? "../assets/play.png" : "disabled.png";
   playPauseButton.disabled = !track.preview_url;
 
   updateTrackListHighlight();
@@ -85,7 +85,7 @@ function playCurrentTrack() {
 
   if (audioPlayer.src) {
     audioPlayer.play();
-    playPauseIcon.src = "assets/pause.png";
+    playPauseIcon.src = "../assets/pause.png";
   }
 }
 
@@ -111,10 +111,10 @@ document.getElementById("play-pause").addEventListener("click", () => {
 
   if (audioPlayer.paused) {
     audioPlayer.play();
-    playPauseIcon.src = "assets/pause.png";
+    playPauseIcon.src = "../assets/pause.png";
   } else {
     audioPlayer.pause();
-    playPauseIcon.src = "assets/play.png";
+    playPauseIcon.src = "../assets/play.png";
   }
 });
 
@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   toggleButton.addEventListener('click', () => {
     trackListContainer.classList.toggle('hidden');
-    toggleIcon.src = trackListContainer.classList.contains('hidden') ? 'assets/show.png' : 'assets/hide.png';
+    toggleIcon.src = trackListContainer.classList.contains('hidden') ? '../assets/show.png' : '../assets/hide.png';
   });
 });
 
